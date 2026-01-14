@@ -50,7 +50,7 @@ body.library {
 }
 
 .library .overlay {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.85);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -64,31 +64,36 @@ body.library {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,.15);
-  background: rgba(255,255,255,0.95);
+  background: #fdfdfd; /* light neutral background for main content */
 }
 
 /* Heading */
 .library-content h2 {
-  color: #2E8B57; /* Green heading */
+  color: #2E8B57;
   margin-bottom: 10px;
 }
 
-/* Stats */
-.stats span {
-  margin: 0 10px;
-  font-weight: bold;
+/* Stats section with colored background */
+.stats {
+  background: #e0f7fa; /* light cyan */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px 0;
 }
-#totalCount { color: #1E90FF; }       /* Blue */
-#availableCount { color: #2E8B57; }   /* Green */
-#borrowedCount { color: #C0392B; }    /* Red */
+#totalCount { color: #1E90FF; }
+#availableCount { color: #2E8B57; }
+#borrowedCount { color: #C0392B; }
 
-/* Controls */
+/* Controls section with colored background */
 .controls {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px 0;
+  background: #fff3cd; /* light yellow */
+  padding: 15px;
+  border-radius: 8px;
 }
 input, select {
   padding: 10px;
@@ -96,7 +101,7 @@ input, select {
   border: 1px solid #ccc;
 }
 
-/* Catalog Grid */
+/* Catalog grid */
 .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -104,9 +109,9 @@ input, select {
   margin-top: 20px;
 }
 
-/* Book Card */
+/* Book card with colored background */
 .book-card {
-  background: #fff;
+  background: #f0f8ff; /* light blue background */
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,.06);
@@ -115,22 +120,22 @@ input, select {
 
 .book-card h3 {
   margin: 0 0 5px;
-  color: #1E90FF; /* Blue for book title */
+  color: #1E90FF;
 }
 
 .book-card .meta {
   font-size: 0.9em;
-  color: #555; /* Gray for metadata */
+  color: #555;
 }
 
 .book-card .status {
   font-weight: bold;
   margin-top: 5px;
 }
-.book-card .status.available { color: #2E8B57; } /* Green */
-.book-card .status.borrowed { color: #C0392B; }  /* Red */
+.book-card .status.available { color: #2E8B57; }
+.book-card .status.borrowed { color: #C0392B; }
 
-/* Action Buttons */
+/* Action buttons with distinct colors */
 .book-card .actions {
   margin-top: 10px;
   display: flex;
@@ -145,9 +150,7 @@ input, select {
   font-weight: bold;
   transition: 0.3s;
 }
-.book-card .actions button:hover {
-  opacity: 0.85;
-}
+.book-card .actions button:hover { opacity: 0.85; }
 .book-card .actions button:nth-child(1) { background: #2E8B57; color: #fff; } /* Borrow */
 .book-card .actions button:nth-child(2) { background: #1E90FF; color: #fff; } /* Return */
 .book-card .actions button:nth-child(3) { background: #C0392B; color: #fff; } /* Delete */
