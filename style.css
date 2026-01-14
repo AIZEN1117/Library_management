@@ -1,0 +1,98 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Welcome Page */
+body.welcome {
+  background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn.primary { background: #4CAF50; color: #fff; }
+.btn.primary:hover { background: #45a049; }
+.btn.small { padding: 8px 16px; font-size: 0.9rem; }
+
+/* Library Page */
+body.library {
+  background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.library .overlay {
+  background: rgba(255,255,255,0.85);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+  background: rgba(255,255,255,0.95);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Catalog */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.book-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
