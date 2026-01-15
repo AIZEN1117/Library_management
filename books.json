@@ -18,7 +18,8 @@
     "available": true,
     "borrowerName": "",
     "borrowerId": ""
-  },
+  }, 
+  
   {
     "id": 3,
     "title": "Introduction to Algorithms",
