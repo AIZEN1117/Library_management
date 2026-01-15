@@ -1,69 +1,25 @@
 const STORAGE_KEY = "library_books_v6";
 let books = [];
 
-// Default seed books
-const DEFAULT_BOOKS = [
-  {
-    id: 1,
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    isbn: "9780132350884",
-    year: 2008,
-    available: true,
-    borrowerName: "",
-    borrowerId: ""
-  },
-  {
-    id: 2,
-    title: "The Pragmatic Programmer",
-    author: "Andrew Hunt, David Thomas",
-    isbn: "9780201616224",
-    year: 1999,
-    available: true,
-    borrowerName: "",
-    borrowerId: ""
-  },
-  {
-    id: 3,
-    title: "Introduction to Algorithms",
-    author: "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
-    isbn: "9780262033848",
-    year: 2009,
-    available: true,
-    borrowerName: "",
-    borrowerId: ""
-  },
-  {
-    id: 4,
-    title: "You Don't Know JS Yet",
-    author: "Kyle Simpson",
-    isbn: "9781091210099",
-    year: 2020,
-    available: true,
-    borrowerName: "",
-    borrowerId: ""
-  },
-  {
-    id: 5,
-    title: "Eloquent JavaScript",
-    author: "Marijn Haverbeke",
-    isbn: "9781593279509",
-    year: 2018,
-    available: true,
-    borrowerName: "",
-    borrowerId: ""
-  }
-];
-
-// Load books from localStorage or defaults
-function loadBooks() {
+// Load books from localStorage or JSON file
+async function loadBooks() {
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) {
-    books = [...DEFAULT_BOOKS];
-    saveBooks();
-  } else {
+
+  if (raw) {
+    // If localStorage exists, use it
     books = JSON.parse(raw);
+  } else {
+    try {
+      // Otherwise fetch from books.json
+      const response = await fetch("books.json");
+      books = await response.json();
+      saveBooks(); // Save to localStorage for persistence
+    } catch (error) {
+      console.error("Error loading books.json:", error);
+      books = []; // fallback empty
+    }
   }
+
   renderBooks();
 }
 
