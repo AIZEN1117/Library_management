@@ -1,22 +1,22 @@
 const STORAGE_KEY = "library_books_v6";
 let books = [];
 
-// Always load fresh from books.json, then sync with localStorage
+// Always load fresh from new_books.json, then sync with localStorage
 async function loadBooks() {
   try {
-    const response = await fetch("books.json");
+    const response = await fetch("new_books.json"); // fetch JSON file
     const jsonBooks = await response.json();
 
-    // If localStorage exists, merge it with JSON
+    // If localStorage exists, use it; otherwise seed from JSON
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       books = JSON.parse(raw);
     } else {
-      books = jsonBooks; // first-time load from JSON
+      books = jsonBooks;
       saveBooks();
     }
   } catch (error) {
-    console.error("Error loading books.json:", error);
+    console.error("Error loading new_books.json:", error);
     books = [];
   }
 
@@ -117,6 +117,12 @@ function addBook() {
   });
   saveBooks();
   renderBooks();
+}
+
+// Reset button (optional)
+function resetLibrary() {
+  localStorage.removeItem(STORAGE_KEY);
+  loadBooks();
 }
 
 document.getElementById("addBookBtn")?.addEventListener("click", addBook);
