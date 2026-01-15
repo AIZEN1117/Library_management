@@ -1,0 +1,52 @@
+[
+  {
+    "id": 101,
+    "title": "The Mythical Man-Month",
+    "author": "Frederick P. Brooks Jr.",
+    "isbn": "9780201835953",
+    "year": 1995,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 102,
+    "title": "Refactoring: Improving the Design of Existing Code",
+    "author": "Martin Fowler",
+    "isbn": "9780201485677",
+    "year": 1999,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 103,
+    "title": "Patterns of Enterprise Application Architecture",
+    "author": "Martin Fowler",
+    "isbn": "9780321127426",
+    "year": 2002,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 104,
+    "title": "Effective Java",
+    "author": "Joshua Bloch",
+    "isbn": "9780134685991",
+    "year": 2018,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
+  {
+    "id": 105,
+    "title": "Head First Design Patterns",
+    "author": "Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra",
+    "isbn": "9780596007126",
+    "year": 2004,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  }
+]
