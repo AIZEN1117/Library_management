@@ -1,5 +1,14 @@
 [
- 
+  {
+    "id": 1,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "year": 2008,
+    "available": true,
+    "borrowerName": "",
+    "borrowerId": ""
+  },
   {
     "id": 2,
     "title": "The Pragmatic Programmer",
