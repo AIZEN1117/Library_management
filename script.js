@@ -1,23 +1,23 @@
 const STORAGE_KEY = "library_books_v6";
 let books = [];
 
-// Load books from localStorage or JSON file
+// Always load fresh from books.json, then sync with localStorage
 async function loadBooks() {
-  const raw = localStorage.getItem(STORAGE_KEY);
+  try {
+    const response = await fetch("books.json");
+    const jsonBooks = await response.json();
 
-  if (raw) {
-    // If localStorage exists, use it
-    books = JSON.parse(raw);
-  } else {
-    try {
-      // Otherwise fetch from books.json
-      const response = await fetch("books.json");
-      books = await response.json();
-      saveBooks(); // Save to localStorage for persistence
-    } catch (error) {
-      console.error("Error loading books.json:", error);
-      books = []; // fallback empty
+    // If localStorage exists, merge it with JSON
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      books = JSON.parse(raw);
+    } else {
+      books = jsonBooks; // first-time load from JSON
+      saveBooks();
     }
+  } catch (error) {
+    console.error("Error loading books.json:", error);
+    books = [];
   }
 
   renderBooks();
